@@ -11,7 +11,7 @@ le chargement du contenu (`contenu.json`) et l'administration ne marcherait pas.
 À la place, **double-cliquez sur `DEMARRER-LE-SITE.bat`** :
 une fenêtre noire s'ouvre (laissez-la ouverte) et le site s'affiche
 automatiquement dans votre navigateur à l'adresse `http://localhost:8777/`.
-L'administration est sur `http://localhost:8777/admin.html` et le bouton
+L'administration est sur `http://localhost:8777/gestion/` et le bouton
 💾 Enregistrer y fonctionne directement. Pour arrêter : fermez la fenêtre noire.
 
 ## ⚙ Mini-CMS : modifier le site sans toucher au code
@@ -22,27 +22,34 @@ Les pages le chargent automatiquement via `cms.js`.
 
 ### Modifier le contenu
 
-1. Ouvrez **`admin.html`** dans votre navigateur (depuis le site en ligne ou un serveur local).
-2. Modifiez les champs : coordonnées, horaires, événement vedette, agenda,
-   actualités, galerie photos, vidéothèque, chaîne YouTube…
-3. Cliquez sur **💾 Enregistrer** :
-   - sur le serveur local de prévisualisation, la sauvegarde est immédiate ;
-   - sur un hébergement classique, cliquez plutôt sur **⬇ Télécharger contenu.json**
-     puis remplacez le fichier `contenu.json` sur l'hébergeur
-     (gestionnaire de fichiers cPanel ou FTP). C'est le seul fichier à remplacer !
+1. Ouvrez l'espace de gestion : **`/gestion/`** (en local `http://localhost:8777/gestion/`,
+   en ligne `https://votredomaine.com/gestion/`).
+2. Modifiez les champs : apparence/couleurs, coordonnées, horaires, événement vedette,
+   agenda, actualités, galerie photos, vidéothèque, chaîne YouTube…
+3. Cliquez sur **💾 Enregistrer** : la sauvegarde est **immédiate**, en local
+   (serveur `DEMARRER-LE-SITE.bat`) comme en ligne (script PHP `gestion/enregistrer-contenu.php`
+   sur Hostinger). Rechargez ensuite les pages du site (F5).
+4. Secours : **⬇ Télécharger contenu.json** récupère le fichier à remplacer manuellement.
 
 ### Ajouter ses propres photos
 
 Téléversez vos images dans le dossier `images/` de l'hébergement, puis dans
 l'admin indiquez le chemin, par exemple `images/fete-patronale-2026.jpg`.
 
-### Sécurité
+### Sécurité de l'espace /gestion/ (hébergement Hostinger)
 
-- `admin.html` ne peut **pas** modifier le site en ligne directement (un site
-  statique n'accepte pas d'écriture) : il sert d'éditeur et produit le fichier à téléverser.
-- Si vous ne voulez pas que la page soit visible du public, ne la mettez pas en
-  ligne, ou renommez-la (ex. `admin-7gk2.html`).
+L'espace de gestion permet d'écrire sur le site : il **doit** être protégé par mot de passe.
+Sur Hostinger, sans rien mettre de secret dans le code :
+
+1. hPanel → **Avancé → Protéger les répertoires par mot de passe** (« Password Protect Directories »).
+2. Sélectionnez le dossier **`gestion`**.
+3. Définissez un **nom d'utilisateur + mot de passe** (gardés par Hostinger, jamais dans le dépôt).
+4. Désormais, ouvrir `https://votredomaine.com/gestion/` demande ce mot de passe,
+   et seul vous pouvez enregistrer les modifications.
+
 - En cas d'erreur dans `contenu.json`, le site retombe sur son contenu HTML d'origine.
+- ⚠ Après chaque modification **en ligne**, si vous redéployez depuis GitHub, pensez à
+  renvoyer aussi `contenu.json` sur GitHub (sinon le redéploiement écrase vos changements en ligne).
 
 ## Pages
 

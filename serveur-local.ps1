@@ -42,7 +42,7 @@ Write-Host "   PAROISSE SAINTE ANNE DE BINGERVILLE — SITE EN LOCAL" -Foregroun
 Write-Host "  ============================================================" -ForegroundColor DarkYellow
 Write-Host ""
 Write-Host "   Site            : http://localhost:$port/" -ForegroundColor Green
-Write-Host "   Administration  : http://localhost:$port/admin.html" -ForegroundColor Green
+Write-Host "   Administration  : http://localhost:$port/gestion/" -ForegroundColor Green
 Write-Host ""
 Write-Host "   Le navigateur va s'ouvrir automatiquement."
 Write-Host "   ⚠ LAISSEZ CETTE FENÊTRE OUVERTE pendant que vous travaillez."
@@ -62,6 +62,8 @@ while ($listener.IsListening) {
   $ctx = $listener.GetContext()
   $chemin = [System.Uri]::UnescapeDataString($ctx.Request.Url.AbsolutePath.TrimStart('/'))
   if ([string]::IsNullOrEmpty($chemin)) { $chemin = "index.html" }
+  # Dossier (chemin finissant par /) -> on sert son index.html
+  if ($chemin.EndsWith("/")) { $chemin = $chemin + "index.html" }
 
   # Sauvegarde du mini-CMS : POST /enregistrer-contenu -> écrit contenu.json
   if ($ctx.Request.HttpMethod -eq "POST" -and $chemin -eq "enregistrer-contenu") {
