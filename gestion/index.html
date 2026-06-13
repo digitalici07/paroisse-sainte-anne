@@ -102,6 +102,18 @@
         le fichier manuellement. 🔒 Cet espace de gestion est protégé par mot de passe.
       </div>
 
+      <details class="panneau" open>
+        <summary>📷 Téléverser une photo</summary>
+        <div class="interieur">
+          <p class="aide" style="margin-bottom:12px;">Envoyez une photo depuis votre ordinateur ou votre téléphone. Une fois téléversée, <strong>copiez le chemin obtenu</strong> et collez-le dans le champ « image » voulu ci-dessous (galerie, actualité, événement, logo, photo d'en-tête…).</p>
+          <div class="champ">
+            <input type="file" id="upload-fichier" accept="image/*">
+          </div>
+          <button type="button" class="btn btn-or" id="btn-televerser" style="padding:9px 18px;">⬆ Téléverser la photo</button>
+          <div id="upload-resultat" style="margin-top:14px;"></div>
+        </div>
+      </details>
+
       <details class="panneau">
         <summary>🎨 Apparence (logo &amp; photo d'en-tête)</summary>
         <div class="interieur">
@@ -658,6 +670,45 @@
       a.click();
       URL.revokeObjectURL(a.href);
       statut("✓ Fichier téléchargé — remplacez contenu.json sur votre hébergeur.", "ok");
+    });
+
+    // Téléversement d'une photo (script PHP gestion/televerser-image.php)
+    document.getElementById("btn-televerser").addEventListener("click", function () {
+      var input = document.getElementById("upload-fichier");
+      var res = document.getElementById("upload-resultat");
+      if (!input.files || !input.files[0]) {
+        statut("Choisissez d'abord une image à téléverser.", "erreur");
+        return;
+      }
+      var fd = new FormData();
+      fd.append("image", input.files[0]);
+      res.innerHTML = "⏳ Téléversement en cours…";
+      fetch("televerser-image.php", { method: "POST", body: fd })
+        .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+        .then(function (txt) {
+          var data = null;
+          try { data = JSON.parse(txt); } catch (e) { return Promise.reject(); }
+          if (!data || !data.ok) return Promise.reject();
+          res.innerHTML =
+            '<div class="element-liste"><p style="margin-bottom:8px;">✓ Photo téléversée ! Copiez ce chemin :</p>' +
+            '<div class="deux-champs" style="align-items:center;">' +
+            '<input readonly id="upload-chemin" value="' + data.chemin + '">' +
+            '<button type="button" class="btn-ajouter" id="btn-copier-chemin" style="width:auto;padding:9px 14px;">📋 Copier le chemin</button>' +
+            '</div><img src="../' + data.chemin + '" class="apercu-mini" style="margin-top:10px;max-height:120px;"></div>';
+          document.getElementById("btn-copier-chemin").addEventListener("click", function () {
+            var champ = document.getElementById("upload-chemin");
+            champ.select();
+            if (navigator.clipboard) { navigator.clipboard.writeText(champ.value); }
+            else { try { document.execCommand("copy"); } catch (e) {} }
+            statut("✓ Chemin copié ! Collez-le dans le champ « image » voulu.", "ok");
+          });
+          statut("✓ Photo téléversée avec succès.", "ok");
+          input.value = "";
+        })
+        .catch(function () {
+          res.innerHTML = "";
+          statut("⚠ Le téléversement ne fonctionne qu'en ligne (Hostinger). En local, déposez vos photos dans le dossier images/.", "erreur");
+        });
     });
 
     // Essaie successivement le script PHP (en ligne) puis le serveur local,
