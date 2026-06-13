@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; plan d'accès — Paroisse Sainte Anne de Bingerville</title>
+  <meta name="description" content="Contacter la Paroisse Sainte Anne de Bingerville : adresse, téléphone, horaires du secrétariat, formulaire de contact et plan d'accès.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bandeau-haut">
+    <div class="conteneur">
+      <span>📍 Bingerville — Archidiocèse d'Abidjan, Côte d'Ivoire</span>
+      <span class="verset">« Venez à moi, vous tous qui peinez » — Mt 11, 28</span>
+      <span>☎ <a href="tel:+2250700000000">+225 07 00 00 00 00</a></span>
+    </div>
+  </div>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">
+        <span class="croix">✝</span>
+        <span class="nom">
+          <strong>Paroisse Sainte Anne</strong>
+          <span>BINGERVILLE · CÔTE D'IVOIRE</span>
+        </span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a href="la-paroisse.html">La Paroisse</a>
+            <div class="sous-menu">
+              <a href="la-paroisse.html#histoire">Notre histoire</a>
+              <a href="la-paroisse.html#sainte-anne">Sainte Anne, notre patronne</a>
+              <a href="la-paroisse.html#equipe">Équipe pastorale</a>
+            </div>
+          </li>
+          <li>
+            <a href="messes.html">Vie spirituelle</a>
+            <div class="sous-menu">
+              <a href="messes.html">Horaires des messes</a>
+              <a href="sacrements.html">Les sacrements</a>
+              <a href="mouvements.html">Mouvements &amp; associations</a>
+            </div>
+          </li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li>
+            <a href="medias.html">Médias</a>
+            <div class="sous-menu">
+              <a href="medias.html">Photos &amp; vidéos</a>
+              <a href="youtube.html">Chaîne YouTube</a>
+            </div>
+          </li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="don.html" class="btn-don-nav">♥ Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere-page">
+    <div class="conteneur">
+      <p class="fil-ariane"><a href="index.html">Accueil</a> › Contact</p>
+      <h1>Contact &amp; plan d'accès</h1>
+      <p>Le secrétariat paroissial est à votre écoute pour toute demande.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="grille grille-2" style="align-items:start;">
+        <!-- Formulaire -->
+        <form class="formulaire" data-demo>
+          <h2 style="margin-bottom:6px;">Écrivez-nous</h2>
+          <p style="color:var(--texte-doux);font-size:.92rem;">Demande de sacrement, intention de messe, engagement dans un mouvement, question pratique…</p>
+          <div class="ligne">
+            <div>
+              <label for="nom">Nom &amp; prénoms *</label>
+              <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+            </div>
+            <div>
+              <label for="tel">Téléphone / WhatsApp *</label>
+              <input type="tel" id="tel" name="tel" required placeholder="+225 …">
+            </div>
+          </div>
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.com">
+          <label for="objet">Objet de votre demande *</label>
+          <select id="objet" name="objet" required>
+            <option value="">— Choisir —</option>
+            <option>Demande de baptême</option>
+            <option>Préparation au mariage</option>
+            <option>Intention de messe</option>
+            <option>Inscription à la catéchèse</option>
+            <option>Rejoindre un mouvement / une chorale</option>
+            <option>Visite d'un prêtre (malade)</option>
+            <option>Don / soutien aux œuvres</option>
+            <option>Commission communication / médias</option>
+            <option>Autre demande</option>
+          </select>
+          <label for="message">Votre message *</label>
+          <textarea id="message" name="message" required placeholder="Décrivez votre demande…"></textarea>
+          <p style="margin-top:18px;">
+            <button type="submit" class="btn btn-rouge">Envoyer le message</button>
+          </p>
+          <p class="message-form" role="status"></p>
+          <p style="font-size:.8rem;color:var(--texte-doux);margin-top:10px;">* Champs obligatoires. Vos informations ne sont utilisées que pour répondre à votre demande.</p>
+        </form>
+
+        <!-- Coordonnées -->
+        <div>
+          <div class="encart-horaires" style="margin-bottom:22px;">
+            <h3>📍 Nos coordonnées</h3>
+            <ul class="infos-contact">
+              <li><span class="picto">⛪</span><span>Paroisse Sainte Anne<br>Bingerville, District d'Abidjan — Côte d'Ivoire</span></li>
+              <li><span class="picto">☎</span><span>Téléphone / WhatsApp :<br><a href="tel:+2250700000000">+225 07 00 00 00 00</a></span></li>
+              <li><span class="picto">✉</span><span>E-mail :<br><a href="mailto:paroissesainteanne.bgv@gmail.com">paroissesainteanne.bgv@gmail.com</a></span></li>
+            </ul>
+          </div>
+          <div class="encart-horaires">
+            <h3>🕘 Permanences du secrétariat</h3>
+            <ul>
+              <li><span>Mardi à vendredi</span><span>8 h – 12 h / 14 h 30 – 17 h</span></li>
+              <li><span>Samedi</span><span>8 h – 12 h</span></li>
+              <li><span>Dimanche</span><span>après les messes</span></li>
+              <li><span>Lundi</span><span>fermé</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-creme">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Plan d'accès</span>
+        <h2>Nous trouver à Bingerville</h2>
+        <p>Bingerville se situe à l'est d'Abidjan, accessible par le boulevard François Mitterrand puis la route de Bingerville.</p>
+      </div>
+      <iframe class="carte-osm" title="Carte de Bingerville"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-3.9250%2C5.3300%2C-3.8550%2C5.3750&amp;layer=mapnik&amp;marker=5.3525%2C-3.8900"
+        loading="lazy"></iframe>
+      <p style="text-align:center;margin-top:16px;font-size:.88rem;color:var(--texte-doux);">
+        <a href="https://www.openstreetmap.org/?mlat=5.3525&amp;mlon=-3.8900#map=15/5.3525/-3.8900" target="_blank" rel="noopener">Ouvrir la carte en grand ↗</a>
+        — La position exacte de l'église sera affinée par la commission communication.
+      </p>
+    </div>
+  </section>
+
+  <section class="appel-action">
+    <div class="conteneur">
+      <h2>À très bientôt à la Paroisse Sainte Anne !</h2>
+      <p>Rejoignez-nous dimanche à 7 h 00 ou 9 h 30 — vous êtes les bienvenus.</p>
+      <a href="messes.html" class="btn btn-or">Horaires des messes</a>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="grille grille-4">
+        <div>
+          <h4>Paroisse Sainte Anne</h4>
+          <p>Communauté catholique de Bingerville, Archidiocèse d'Abidjan, Côte d'Ivoire. Une famille où chacun est accueilli, écouté et envoyé.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="youtube.html" aria-label="YouTube">▶</a>
+            <a href="https://wa.me/2250700000000" aria-label="WhatsApp">✆</a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="messes.html">Horaires des messes</a></li>
+            <li><a href="sacrements.html">Les sacrements</a></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><a href="medias.html">Photos &amp; vidéos</a></li>
+            <li><a href="don.html">Faire un don</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Messes dominicales</h4>
+          <ul>
+            <li>Samedi : 18 h 30 (anticipée)</li>
+            <li>Dimanche : 7 h 00</li>
+            <li>Dimanche : 9 h 30 (grand-messe)</li>
+            <li>Confessions : samedi 16 h – 17 h 30</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 Bingerville, Abidjan — Côte d'Ivoire</li>
+            <li>☎ +225 07 00 00 00 00</li>
+            <li>✉ paroissesainteanne.bgv@gmail.com</li>
+            <li><a href="contact.html">Plan d'accès →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bas">
+        <p>© <span class="annee-courante">2026</span> Paroisse Sainte Anne de Bingerville — Tous droits réservés. Photos d'illustration : <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cms.js"></script>
+</body>
+</html>

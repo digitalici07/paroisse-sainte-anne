@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Médias : photos &amp; vidéos — Paroisse Sainte Anne de Bingerville</title>
+  <meta name="description" content="Galerie photos et vidéos de la Paroisse Sainte Anne de Bingerville : célébrations, vie communautaire, jeunesse et œuvres de solidarité.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bandeau-haut">
+    <div class="conteneur">
+      <span>📍 Bingerville — Archidiocèse d'Abidjan, Côte d'Ivoire</span>
+      <span class="verset">« Venez à moi, vous tous qui peinez » — Mt 11, 28</span>
+      <span>☎ <a href="tel:+2250700000000">+225 07 00 00 00 00</a></span>
+    </div>
+  </div>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">
+        <span class="croix">✝</span>
+        <span class="nom">
+          <strong>Paroisse Sainte Anne</strong>
+          <span>BINGERVILLE · CÔTE D'IVOIRE</span>
+        </span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a href="la-paroisse.html">La Paroisse</a>
+            <div class="sous-menu">
+              <a href="la-paroisse.html#histoire">Notre histoire</a>
+              <a href="la-paroisse.html#sainte-anne">Sainte Anne, notre patronne</a>
+              <a href="la-paroisse.html#equipe">Équipe pastorale</a>
+            </div>
+          </li>
+          <li>
+            <a href="messes.html">Vie spirituelle</a>
+            <div class="sous-menu">
+              <a href="messes.html">Horaires des messes</a>
+              <a href="sacrements.html">Les sacrements</a>
+              <a href="mouvements.html">Mouvements &amp; associations</a>
+            </div>
+          </li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li>
+            <a href="medias.html">Médias</a>
+            <div class="sous-menu">
+              <a href="medias.html">Photos &amp; vidéos</a>
+              <a href="youtube.html">Chaîne YouTube</a>
+            </div>
+          </li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="don.html" class="btn-don-nav">♥ Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere-page">
+    <div class="conteneur">
+      <p class="fil-ariane"><a href="index.html">Accueil</a> › Médias</p>
+      <h1>Espace médias</h1>
+      <p>La vie de la paroisse en photos et en vidéos.</p>
+    </div>
+  </section>
+
+  <!-- Galerie photos -->
+  <section class="section" id="photos">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Galerie</span>
+        <h2>Photos</h2>
+        <p>Cliquez sur une photo pour l'agrandir. Utilisez les filtres pour trouver rapidement ce que vous cherchez.</p>
+      </div>
+
+      <div class="filtres-galerie">
+        <button class="actif" data-filtre="tout">Tout</button>
+        <button data-filtre="celebrations">Célébrations</button>
+        <button data-filtre="communaute">Vie communautaire</button>
+        <button data-filtre="jeunesse">Jeunesse &amp; catéchèse</button>
+        <button data-filtre="solidarite">Solidarité</button>
+      </div>
+
+      <div class="galerie">
+        <figure data-categorie="celebrations">
+          <img src="images/interieur-eglise.jpg" data-grand="images/interieur-eglise.jpg" alt="Intérieur de notre église : nef, allée centrale et chœur" loading="lazy">
+          <figcaption>Notre église — la nef et le chœur</figcaption>
+        </figure>
+        <figure data-categorie="celebrations">
+          <img src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Assemblée en prière, mains levées" loading="lazy">
+          <figcaption>Assemblée en prière</figcaption>
+        </figure>
+        <figure data-categorie="celebrations">
+          <img src="https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="La Bible sur le lutrin" loading="lazy">
+          <figcaption>Liturgie de la Parole</figcaption>
+        </figure>
+        <figure data-categorie="celebrations">
+          <img src="https://images.pexels.com/photos/208216/pexels-photo-208216.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/208216/pexels-photo-208216.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Vitrail représentant la crucifixion" loading="lazy">
+          <figcaption>Vitrail — la Crucifixion</figcaption>
+        </figure>
+        <figure data-categorie="celebrations">
+          <img src="https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Jeunes mariés main dans la main" loading="lazy">
+          <figcaption>Mariage à la paroisse</figcaption>
+        </figure>
+        <figure data-categorie="communaute">
+          <img src="https://images.pexels.com/photos/2351722/pexels-photo-2351722.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/2351722/pexels-photo-2351722.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fidèle en louange, main levée" loading="lazy">
+          <figcaption>Veillée de louange</figcaption>
+        </figure>
+        <figure data-categorie="communaute">
+          <img src="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mains levées pendant la louange" loading="lazy">
+          <figcaption>Soirée de prière</figcaption>
+        </figure>
+        <figure data-categorie="communaute">
+          <img src="https://images.pexels.com/photos/8815070/pexels-photo-8815070.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/8815070/pexels-photo-8815070.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fidèles dansant lors d'une fête paroissiale" loading="lazy">
+          <figcaption>Fête communautaire</figcaption>
+        </figure>
+        <figure data-categorie="communaute">
+          <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Assemblée lors d'une conférence" loading="lazy">
+          <figcaption>Conférence &amp; formation</figcaption>
+        </figure>
+        <figure data-categorie="jeunesse">
+          <img src="https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Enfants en classe de catéchisme" loading="lazy">
+          <figcaption>Catéchisme des enfants</figcaption>
+        </figure>
+        <figure data-categorie="jeunesse">
+          <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Groupe de jeunes souriants" loading="lazy">
+          <figcaption>La jeunesse paroissiale</figcaption>
+        </figure>
+        <figure data-categorie="jeunesse">
+          <img src="https://images.pexels.com/photos/1296720/pexels-photo-1296720.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/1296720/pexels-photo-1296720.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Lecture personnelle de la Bible" loading="lazy">
+          <figcaption>Étude biblique</figcaption>
+        </figure>
+        <figure data-categorie="solidarite">
+          <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Bénévoles préparant des cartons de dons" loading="lazy">
+          <figcaption>Caritas — collecte de dons</figcaption>
+        </figure>
+        <figure data-categorie="solidarite">
+          <img src="https://images.pexels.com/photos/257037/pexels-photo-257037.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/257037/pexels-photo-257037.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mains ouvertes en signe d'offrande" loading="lazy">
+          <figcaption>Mains ouvertes pour servir</figcaption>
+        </figure>
+        <figure data-categorie="solidarite">
+          <img src="https://images.pexels.com/photos/267559/pexels-photo-267559.jpeg?auto=compress&cs=tinysrgb&w=600" data-grand="https://images.pexels.com/photos/267559/pexels-photo-267559.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mains jointes en prière sur une Bible" loading="lazy">
+          <figcaption>Prière pour les malades</figcaption>
+        </figure>
+      </div>
+      <p class="credit-photo">Photos d'illustration fournies par <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> (libres de droits) — elles seront remplacées progressivement par les photos officielles de la paroisse.</p>
+    </div>
+  </section>
+
+  <!-- Vidéos -->
+  <section class="section section-creme" id="videos">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Vidéothèque</span>
+        <h2>Vidéos</h2>
+        <p>Quelques vidéos d'inspiration. Les reportages de la paroisse sont publiés sur notre <a href="youtube.html">chaîne YouTube</a>.</p>
+      </div>
+      <div class="grille grille-2" id="liste-videos">
+        <div class="carte-video">
+          <video controls preload="none" poster="images/poster-28887495.jpg">
+            <source src="https://videos.pexels.com/video-files/28887495/12505005_1920_1080_50fps.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+          <div class="corps">
+            <h3>Un peuple en prière</h3>
+            <p>L'assemblée des fidèles unie dans la prière — vidéo d'illustration Pexels.</p>
+          </div>
+        </div>
+        <div class="carte-video">
+          <video controls preload="none" poster="images/poster-37639456.jpg">
+            <source src="https://videos.pexels.com/video-files/37639456/15954199_1920_1080_24fps.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+          <div class="corps">
+            <h3>Veillée de louange</h3>
+            <p>La joie de chanter et de louer ensemble — vidéo d'illustration Pexels.</p>
+          </div>
+        </div>
+        <div class="carte-video">
+          <video controls preload="none" poster="images/poster-32026248.jpg">
+            <source src="https://videos.pexels.com/video-files/32026248/13651059_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+          <div class="corps">
+            <h3>Au pied de la Croix</h3>
+            <p>Le calvaire, signe de notre espérance — vidéo d'illustration Pexels.</p>
+          </div>
+        </div>
+        <div class="carte-video">
+          <video controls preload="none" poster="images/poster-26885211.jpg">
+            <source src="https://videos.pexels.com/video-files/26885211/12025943_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+          <div class="corps">
+            <h3>Lumière dans la nuit</h3>
+            <p>Une flamme qui veille, comme la prière qui ne s'éteint pas — vidéo d'illustration Pexels.</p>
+          </div>
+        </div>
+      </div>
+      <p class="credit-photo">Vidéos d'illustration fournies par <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> (libres de droits).</p>
+    </div>
+  </section>
+
+  <section class="appel-action">
+    <div class="conteneur">
+      <h2>Vous avez des photos d'un événement paroissial ?</h2>
+      <p>Partagez-les avec la commission communication pour enrichir la galerie de la paroisse.</p>
+      <a href="contact.html" class="btn btn-or">Envoyer mes photos</a>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="grille grille-4">
+        <div>
+          <h4>Paroisse Sainte Anne</h4>
+          <p>Communauté catholique de Bingerville, Archidiocèse d'Abidjan, Côte d'Ivoire. Une famille où chacun est accueilli, écouté et envoyé.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="youtube.html" aria-label="YouTube">▶</a>
+            <a href="https://wa.me/2250700000000" aria-label="WhatsApp">✆</a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="messes.html">Horaires des messes</a></li>
+            <li><a href="sacrements.html">Les sacrements</a></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><a href="medias.html">Photos &amp; vidéos</a></li>
+            <li><a href="don.html">Faire un don</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Messes dominicales</h4>
+          <ul>
+            <li>Samedi : 18 h 30 (anticipée)</li>
+            <li>Dimanche : 7 h 00</li>
+            <li>Dimanche : 9 h 30 (grand-messe)</li>
+            <li>Confessions : samedi 16 h – 17 h 30</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 Bingerville, Abidjan — Côte d'Ivoire</li>
+            <li>☎ +225 07 00 00 00 00</li>
+            <li>✉ paroissesainteanne.bgv@gmail.com</li>
+            <li><a href="contact.html">Plan d'accès →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bas">
+        <p>© <span class="annee-courante">2026</span> Paroisse Sainte Anne de Bingerville — Tous droits réservés. Photos d'illustration : <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cms.js"></script>
+</body>
+</html>

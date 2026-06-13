@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration — Paroisse Sainte Anne de Bingerville</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: #efe8d8; }
+    .admin-entete {
+      background: var(--brun-fonce); color: var(--or-clair); padding: 18px 0;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    }
+    .admin-entete .conteneur { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .admin-entete h1 { color: var(--or-clair); font-size: 1.4rem; margin: 0; }
+    .admin-entete .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .admin-entete .btn { padding: 9px 18px; font-size: .88rem; }
+    .admin-corps { padding: 30px 0 80px; }
+    .panneau {
+      background: var(--blanc); border-radius: 12px; box-shadow: var(--ombre);
+      margin-bottom: 16px; overflow: hidden;
+    }
+    .panneau > summary {
+      cursor: pointer; padding: 18px 22px; font-weight: 700; font-size: 1.15rem;
+      font-family: "Cormorant Garamond", Georgia, serif; color: var(--brun-fonce);
+      list-style: none; display: flex; align-items: center; gap: 10px;
+    }
+    .panneau > summary::-webkit-details-marker { display: none; }
+    .panneau > summary::after { content: "▾"; margin-left: auto; color: var(--or); }
+    .panneau[open] > summary { border-bottom: 1px solid #eee3cf; }
+    .panneau .interieur { padding: 20px 22px; }
+    .champ { margin-bottom: 14px; }
+    .champ label { display: block; font-weight: 700; font-size: .85rem; color: var(--brun-fonce); margin-bottom: 5px; }
+    .champ input, .champ textarea, .champ select {
+      width: 100%; padding: 10px 12px; border: 1.5px solid #ddcfae; border-radius: 8px;
+      font: inherit; font-size: .92rem; background: var(--creme);
+    }
+    .champ textarea { min-height: 70px; resize: vertical; }
+    .champ input:focus, .champ textarea:focus, .champ select:focus { outline: none; border-color: var(--or); background: var(--blanc); }
+    .aide { font-size: .8rem; color: var(--texte-doux); margin-top: 4px; }
+    .element-liste {
+      border: 1.5px dashed #ddcfae; border-radius: 10px; padding: 16px;
+      margin-bottom: 14px; position: relative; background: #fffdf8;
+    }
+    .element-liste .supprimer {
+      position: absolute; top: 10px; right: 10px; background: #f6e3e3; color: var(--rouge);
+      border: none; border-radius: 8px; padding: 5px 11px; font-weight: 700; cursor: pointer; font-size: .8rem;
+    }
+    .element-liste .supprimer:hover { background: var(--rouge); color: #fff; }
+    .deux-champs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px) { .deux-champs { grid-template-columns: 1fr; } }
+    .btn-ajouter {
+      background: var(--creme-2); border: 1.5px dashed var(--or); color: var(--brun-fonce);
+      border-radius: 10px; padding: 11px 18px; font-weight: 700; cursor: pointer; width: 100%;
+      font-size: .92rem;
+    }
+    .btn-ajouter:hover { background: #f4e9c8; }
+    .statut {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+      background: var(--brun-fonce); color: #fff; padding: 13px 26px; border-radius: 999px;
+      box-shadow: 0 8px 26px rgba(0,0,0,.35); display: none; z-index: 200; font-weight: 600;
+    }
+    .statut.ok { background: #1c7c2e; }
+    .statut.erreur { background: var(--rouge); }
+    .note-info {
+      background: #fdf3d7; border-left: 4px solid var(--or); border-radius: 10px;
+      padding: 14px 18px; font-size: .9rem; color: #7a611a; margin-bottom: 24px;
+    }
+    .apercu-mini { max-height: 64px; border-radius: 6px; margin-top: 6px; }
+    .grille-couleurs { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; align-items: center; }
+    .champ-couleur { display: flex; align-items: center; gap: 10px; background: #fffdf8; border: 1.5px dashed #ddcfae; border-radius: 10px; padding: 10px 12px; }
+    .champ-couleur input[type="color"] { width: 44px; height: 34px; border: none; background: none; cursor: pointer; padding: 0; }
+    .champ-couleur label { font-size: .82rem; font-weight: 700; color: var(--brun-fonce); }
+  </style>
+</head>
+<body>
+
+  <header class="admin-entete">
+    <div class="conteneur">
+      <h1>⚙ Administration du site — Paroisse Sainte Anne</h1>
+      <div class="actions">
+        <a class="btn btn-contour" href="index.html" target="_blank">👁 Voir le site</a>
+        <button class="btn btn-contour" id="btn-telecharger">⬇ Télécharger contenu.json</button>
+        <button class="btn btn-or" id="btn-enregistrer">💾 Enregistrer</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-corps">
+    <div class="conteneur">
+
+      <div class="note-info">
+        <strong>Comment ça marche ?</strong><br>
+        Modifiez les champs ci-dessous puis cliquez sur <strong>💾 Enregistrer</strong>.
+        Si le site est ouvert depuis le serveur local de prévisualisation, la sauvegarde est immédiate.
+        Sinon, utilisez <strong>⬇ Télécharger contenu.json</strong> et remplacez le fichier
+        <code>contenu.json</code> sur votre hébergeur (gestionnaire de fichiers ou FTP).
+        ⚠ Ne mettez pas <code>admin.html</code> en ligne si vous ne voulez pas qu'il soit visible du public.
+      </div>
+
+      <details class="panneau">
+        <summary>🎨 Apparence (logo &amp; photo d'en-tête)</summary>
+        <div class="interieur">
+          <div class="deux-champs">
+            <div class="champ">
+              <label>Nom affiché à côté du logo</label>
+              <input id="a-nom" placeholder="Paroisse Sainte Anne">
+            </div>
+            <div class="champ">
+              <label>Sous-titre (petite ligne sous le nom)</label>
+              <input id="a-soustitre" placeholder="BINGERVILLE · CÔTE D'IVOIRE">
+            </div>
+          </div>
+          <div class="champ">
+            <label>Logo (image ronde) — laissez vide pour garder la croix dorée ✝</label>
+            <input id="a-logo" placeholder="images/logo-paroisse.png">
+            <p class="aide">Déposez d'abord votre logo dans le dossier <code>images/</code> du site (idéalement carré, ex. 200 × 200 px), puis indiquez ici son chemin, ex. <code>images/logo-paroisse.png</code>.</p>
+            <img class="apercu-mini" id="a-logo-apercu" alt="" hidden>
+          </div>
+          <div class="champ">
+            <label>Photo d'en-tête (grande image de toutes les pages)</label>
+            <input id="a-entete" placeholder="images/interieur-eglise.jpg">
+            <p class="aide">Photo utilisée en haut de chaque page. Déposez la nouvelle photo dans <code>images/</code> (format paysage, environ 1500 px de large) puis indiquez son chemin, ex. <code>images/facade-eglise.jpg</code>. Astuce : vous pouvez aussi simplement remplacer le fichier <code>images/interieur-eglise.jpg</code> par votre nouvelle photo en gardant le même nom — rien d'autre à changer.</p>
+            <img class="apercu-mini" id="a-entete-apercu" alt="" hidden>
+          </div>
+
+          <h3 style="margin:18px 0 6px;">Couleurs du site</h3>
+          <p class="aide" style="margin-bottom:14px;">Cliquez sur un carré pour choisir une couleur. Les nuances claires et foncées s'adaptent automatiquement.</p>
+          <div class="grille-couleurs">
+            <div class="champ-couleur">
+              <input type="color" id="k-fond" value="#faf6ee">
+              <label for="k-fond">Fond du site</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="k-fond2" value="#f3ecdd">
+              <label for="k-fond2">Fond des sections alternées</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="k-brun" value="#3e2712">
+              <label for="k-brun">Brun (titres, pied de page)</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="k-rouge" value="#9e1b1b">
+              <label for="k-rouge">Rouge (boutons, accents)</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="k-or" value="#c9a227">
+              <label for="k-or">Or (badges, ornements)</label>
+            </div>
+            <div class="champ-couleur">
+              <button type="button" class="btn-ajouter" id="k-reset" style="width:auto;padding:9px 14px;">↺ Couleurs d'origine</button>
+            </div>
+          </div>
+
+          <h3 style="margin:18px 0 6px;">Couleurs des boutons</h3>
+          <p class="aide" style="margin-bottom:14px;">Personnalisez la couleur des boutons indépendamment de la palette générale.</p>
+          <div class="grille-couleurs">
+            <div class="champ-couleur">
+              <input type="color" id="b-don" value="#9e1b1b">
+              <label for="b-don">Bouton « Faire un don » &amp; boutons rouges</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="b-or" value="#c9a227">
+              <label for="b-or">Boutons dorés (principaux)</label>
+            </div>
+            <div class="champ-couleur">
+              <input type="color" id="b-brun" value="#5d3a1a">
+              <label for="b-brun">Boutons bruns (secondaires)</label>
+            </div>
+            <div class="champ-couleur">
+              <button type="button" class="btn-ajouter" id="b-reset" style="width:auto;padding:9px 14px;">↺ Boutons d'origine</button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="panneau" open>
+        <summary>📞 Coordonnées &amp; réseaux</summary>
+        <div class="interieur">
+          <div class="deux-champs">
+            <div class="champ">
+              <label>Téléphone (affiché)</label>
+              <input id="c-telephone" placeholder="+225 07 00 00 00 00">
+            </div>
+            <div class="champ">
+              <label>Numéro WhatsApp (chiffres uniquement, avec 225)</label>
+              <input id="c-whatsapp" placeholder="2250700000000">
+            </div>
+          </div>
+          <div class="deux-champs">
+            <div class="champ">
+              <label>Adresse e-mail</label>
+              <input id="c-email" placeholder="paroisse@exemple.com">
+            </div>
+            <div class="champ">
+              <label>Page Facebook (lien complet)</label>
+              <input id="c-facebook" placeholder="https://www.facebook.com/...">
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>📄 Pied de page</summary>
+        <div class="interieur">
+          <div class="deux-champs">
+            <div class="champ">
+              <label>Titre de la première colonne</label>
+              <input id="p-titre" placeholder="Paroisse Sainte Anne">
+            </div>
+            <div class="champ">
+              <label>Adresse (ligne 📍)</label>
+              <input id="p-adresse" placeholder="Bingerville, Abidjan — Côte d'Ivoire">
+            </div>
+          </div>
+          <div class="champ">
+            <label>Texte de présentation (première colonne)</label>
+            <textarea id="p-description"></textarea>
+          </div>
+          <div class="champ">
+            <label>Ligne de copyright (tout en bas)</label>
+            <input id="p-copyright" placeholder="Paroisse Sainte Anne de Bingerville — Tous droits réservés.">
+            <p class="aide">L'année et le crédit photos Pexels sont ajoutés automatiquement. Le téléphone et l'e-mail du pied de page se règlent dans « 📞 Coordonnées », et les horaires dans « 🕘 Horaires ».</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>▶ Chaîne YouTube</summary>
+        <div class="interieur">
+          <div class="champ">
+            <label>Lien de la chaîne YouTube</label>
+            <input id="y-lien" placeholder="https://www.youtube.com/@VotreChaine">
+            <p class="aide">Utilisé par tous les boutons « YouTube » du site.</p>
+          </div>
+          <div class="champ">
+            <label>Identifiant de la chaîne (Channel ID) — pour le direct</label>
+            <input id="y-channel" placeholder="UCxxxxxxxxxxxxxxxxxxxxxx">
+            <p class="aide">Se trouve dans YouTube Studio → Paramètres → Chaîne → Paramètres avancés. Une fois renseigné, le lecteur « direct » de la page YouTube s'active automatiquement.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>🕘 Horaires</summary>
+        <div class="interieur">
+          <h3 style="margin-bottom:10px;">Encarts de la page d'accueil</h3>
+          <div id="liste-encarts"></div>
+          <h3 style="margin:22px 0 10px;">Tableau des messes (page « Horaires des messes »)</h3>
+          <div id="liste-tableau"></div>
+          <button class="btn-ajouter" data-ajouter="tableau">➕ Ajouter une ligne au tableau</button>
+          <h3 style="margin:22px 0 10px;">Horaires du pied de page (4 lignes courtes)</h3>
+          <div id="liste-footer"></div>
+          <button class="btn-ajouter" data-ajouter="footer">➕ Ajouter une ligne</button>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>⭐ Événement vedette (accueil &amp; page événements)</summary>
+        <div class="interieur">
+          <div class="deux-champs">
+            <div class="champ">
+              <label>Badge (ex. « Fête patronale »)</label>
+              <input id="v-etiquette">
+            </div>
+            <div class="champ">
+              <label>Date pour le compte à rebours (AAAA-MM-JJ)</label>
+              <input id="v-date" placeholder="2026-07-26">
+            </div>
+          </div>
+          <div class="champ">
+            <label>Titre</label>
+            <input id="v-titre">
+          </div>
+          <div class="champ">
+            <label>Description</label>
+            <textarea id="v-description"></textarea>
+          </div>
+          <div class="champ">
+            <label>Image (adresse complète ou chemin local ex. images/photo.jpg)</label>
+            <input id="v-image">
+            <img class="apercu-mini" id="v-image-apercu" alt="" hidden>
+          </div>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>📅 Agenda des événements <span class="aide">(les 3 premiers s'affichent aussi sur l'accueil)</span></summary>
+        <div class="interieur">
+          <div id="liste-agenda"></div>
+          <button class="btn-ajouter" data-ajouter="agenda">➕ Ajouter un événement</button>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>📰 Actualités <span class="aide">(les 3 premières s'affichent aussi sur l'accueil)</span></summary>
+        <div class="interieur">
+          <div id="liste-actualites"></div>
+          <button class="btn-ajouter" data-ajouter="actualites">➕ Ajouter une actualité</button>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>📷 Galerie photos (page médias)</summary>
+        <div class="interieur">
+          <p class="aide" style="margin-bottom:14px;">Pour vos propres photos : téléversez-les dans le dossier <code>images/</code> de l'hébergement puis indiquez le chemin, ex. <code>images/fete-2026.jpg</code>.</p>
+          <div id="liste-galerie"></div>
+          <button class="btn-ajouter" data-ajouter="galerie">➕ Ajouter une photo</button>
+        </div>
+      </details>
+
+      <details class="panneau">
+        <summary>🎬 Vidéothèque (page médias)</summary>
+        <div class="interieur">
+          <div id="liste-videos"></div>
+          <button class="btn-ajouter" data-ajouter="videos">➕ Ajouter une vidéo</button>
+        </div>
+      </details>
+
+    </div>
+  </main>
+
+  <div class="statut" id="statut"></div>
+
+  <script>
+  (function () {
+    "use strict";
+    var contenu = null;
+    var CATEGORIES = [
+      ["celebrations", "Célébrations"],
+      ["communaute", "Vie communautaire"],
+      ["jeunesse", "Jeunesse & catéchèse"],
+      ["solidarite", "Solidarité"]
+    ];
+
+    function statut(texte, classe) {
+      var s = document.getElementById("statut");
+      s.textContent = texte;
+      s.className = "statut " + (classe || "");
+      s.style.display = "block";
+      clearTimeout(s._t);
+      s._t = setTimeout(function () { s.style.display = "none"; }, 4000);
+    }
+
+    function el(html) {
+      var d = document.createElement("div");
+      d.innerHTML = html.trim();
+      return d.firstChild;
+    }
+
+    function attr(v) {
+      return String(v == null ? "" : v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+    }
+
+    /* ---------- Gabarits des éléments de liste ---------- */
+    var gabarits = {
+      tableau: function (l) {
+        l = l || {};
+        return el('<div class="element-liste" data-type="tableau">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Jour</label><input data-champ="jour" value="' + attr(l.jour) + '"></div>' +
+          '<div class="champ"><label>Heure</label><input data-champ="heure" value="' + attr(l.heure) + '"></div></div>' +
+          '<div class="champ"><label>Célébration</label><input data-champ="celebration" value="' + attr(l.celebration) + '"></div>' +
+          "</div>");
+      },
+      footer: function (l) {
+        return el('<div class="element-liste" data-type="footer">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="champ"><label>Ligne</label><input data-champ="ligne" value="' + attr(l || "") + '"></div>' +
+          "</div>");
+      },
+      agenda: function (l) {
+        l = l || {};
+        return el('<div class="element-liste" data-type="agenda">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Jour (ex. 26 ou 23-25)</label><input data-champ="jour" value="' + attr(l.jour) + '"></div>' +
+          '<div class="champ"><label>Mois &amp; année (ex. juil. 2026)</label><input data-champ="mois" value="' + attr(l.mois) + '"></div></div>' +
+          '<div class="champ"><label>Titre</label><input data-champ="titre" value="' + attr(l.titre) + '"></div>' +
+          '<div class="champ"><label>Description</label><textarea data-champ="description">' + attr(l.description) + "</textarea></div>" +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Heure (ex. 9 h 30)</label><input data-champ="heure" value="' + attr(l.heure) + '"></div>' +
+          '<div class="champ"><label>Lieu</label><input data-champ="lieu" value="' + attr(l.lieu) + '"></div></div>' +
+          '<div class="champ"><label>Image (facultatif)</label><input data-champ="image" value="' + attr(l.image) + '"></div>' +
+          "</div>");
+      },
+      actualites: function (l) {
+        l = l || {};
+        return el('<div class="element-liste" data-type="actualites">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Date affichée (ex. 8 juin 2026)</label><input data-champ="date" value="' + attr(l.date) + '"></div>' +
+          '<div class="champ"><label>Titre</label><input data-champ="titre" value="' + attr(l.titre) + '"></div></div>' +
+          '<div class="champ"><label>Texte</label><textarea data-champ="texte">' + attr(l.texte) + "</textarea></div>" +
+          '<div class="champ"><label>Image</label><input data-champ="image" value="' + attr(l.image) + '"></div>' +
+          "</div>");
+      },
+      galerie: function (l) {
+        l = l || { categorie: "celebrations" };
+        var options = CATEGORIES.map(function (c) {
+          return '<option value="' + c[0] + '"' + (l.categorie === c[0] ? " selected" : "") + ">" + c[1] + "</option>";
+        }).join("");
+        return el('<div class="element-liste" data-type="galerie">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="champ"><label>Légende</label><input data-champ="legende" value="' + attr(l.legende) + '"></div>' +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Image (vignette)</label><input data-champ="src" value="' + attr(l.src) + '"></div>' +
+          '<div class="champ"><label>Image en grand (facultatif)</label><input data-champ="grand" value="' + attr(l.grand) + '"></div></div>' +
+          '<div class="champ"><label>Catégorie</label><select data-champ="categorie">' + options + "</select></div>" +
+          "</div>");
+      },
+      videos: function (l) {
+        l = l || {};
+        return el('<div class="element-liste" data-type="videos">' +
+          '<button type="button" class="supprimer">✕ Supprimer</button>' +
+          '<div class="champ"><label>Titre</label><input data-champ="titre" value="' + attr(l.titre) + '"></div>' +
+          '<div class="champ"><label>Description</label><textarea data-champ="description">' + attr(l.description) + "</textarea></div>" +
+          '<div class="deux-champs">' +
+          '<div class="champ"><label>Fichier vidéo (.mp4)</label><input data-champ="src" value="' + attr(l.src) + '"></div>' +
+          '<div class="champ"><label>Affiche / poster (facultatif)</label><input data-champ="poster" value="' + attr(l.poster) + '"></div></div>' +
+          "</div>");
+      },
+      encart: function (e, indice) {
+        e = e || { titre: "", items: [] };
+        var bloc = el('<div class="element-liste" data-type="encart">' +
+          '<div class="champ"><label>Titre de l\'encart ' + (indice + 1) + "</label>" +
+          '<input data-champ="titre" value="' + attr(e.titre) + '"></div>' +
+          '<div class="sous-items"></div>' +
+          '<button type="button" class="btn-ajouter btn-ajouter-item">➕ Ajouter une ligne d\'horaire</button>' +
+          "</div>");
+        var sousListe = bloc.querySelector(".sous-items");
+        (e.items || []).forEach(function (i) { sousListe.appendChild(gabarits.encartItem(i)); });
+        bloc.querySelector(".btn-ajouter-item").addEventListener("click", function () {
+          sousListe.appendChild(gabarits.encartItem());
+        });
+        return bloc;
+      },
+      encartItem: function (i) {
+        i = i || {};
+        return el('<div class="element-liste" data-type="encart-item" style="padding:10px;margin-bottom:8px;">' +
+          '<button type="button" class="supprimer">✕</button>' +
+          '<div class="deux-champs">' +
+          '<div class="champ" style="margin-bottom:0;"><label>Libellé</label><input data-champ="libelle" value="' + attr(i.libelle) + '"></div>' +
+          '<div class="champ" style="margin-bottom:0;"><label>Horaire</label><input data-champ="horaire" value="' + attr(i.horaire) + '"></div></div>' +
+          "</div>");
+      }
+    };
+
+    /* ---------- Remplissage des formulaires ---------- */
+    function remplir() {
+      var a = contenu.apparence || {};
+      document.getElementById("a-nom").value = a.nomSite || "";
+      document.getElementById("a-soustitre").value = a.sousTitre || "";
+      document.getElementById("a-logo").value = a.logo || "";
+      document.getElementById("a-entete").value = a.imageEntete || "";
+
+      var k = a.couleurs || {};
+      document.getElementById("k-fond").value = k.fond || "#faf6ee";
+      document.getElementById("k-fond2").value = k.fondSecondaire || "#f3ecdd";
+      document.getElementById("k-brun").value = k.brun || "#3e2712";
+      document.getElementById("k-rouge").value = k.rouge || "#9e1b1b";
+      document.getElementById("k-or").value = k.or || "#c9a227";
+
+      var bt = a.boutons || {};
+      document.getElementById("b-don").value = bt.don || "#9e1b1b";
+      document.getElementById("b-or").value = bt.or || "#c9a227";
+      document.getElementById("b-brun").value = bt.brun || "#5d3a1a";
+
+      var pd = contenu.pied || {};
+      document.getElementById("p-titre").value = pd.titre || "";
+      document.getElementById("p-adresse").value = pd.adresse || "";
+      document.getElementById("p-description").value = pd.description || "";
+      document.getElementById("p-copyright").value = pd.copyright || "";
+
+      var c = contenu.coordonnees || {};
+      document.getElementById("c-telephone").value = c.telephone || "";
+      document.getElementById("c-whatsapp").value = c.whatsapp || "";
+      document.getElementById("c-email").value = c.email || "";
+      document.getElementById("c-facebook").value = c.facebook === "#" ? "" : (c.facebook || "");
+
+      var y = contenu.youtube || {};
+      document.getElementById("y-lien").value = y.lienChaine || "";
+      document.getElementById("y-channel").value = y.channelId || "";
+
+      var v = contenu.evenementVedette || {};
+      document.getElementById("v-etiquette").value = v.etiquette || "";
+      document.getElementById("v-date").value = v.dateISO || "";
+      document.getElementById("v-titre").value = v.titre || "";
+      document.getElementById("v-description").value = v.description || "";
+      document.getElementById("v-image").value = v.image || "";
+
+      var lEncarts = document.getElementById("liste-encarts");
+      lEncarts.innerHTML = "";
+      (contenu.encartsAccueil || []).forEach(function (e, i) {
+        lEncarts.appendChild(gabarits.encart(e, i));
+      });
+
+      var defs = [
+        ["tableau", "liste-tableau", contenu.messesTableau],
+        ["footer", "liste-footer", contenu.footerHoraires],
+        ["agenda", "liste-agenda", contenu.agenda],
+        ["actualites", "liste-actualites", contenu.actualites],
+        ["galerie", "liste-galerie", contenu.galerie],
+        ["videos", "liste-videos", contenu.videos]
+      ];
+      defs.forEach(function (d) {
+        var conteneur = document.getElementById(d[1]);
+        conteneur.innerHTML = "";
+        (d[2] || []).forEach(function (item) {
+          conteneur.appendChild(gabarits[d[0]](item));
+        });
+      });
+    }
+
+    /* ---------- Collecte des formulaires ---------- */
+    function lireElement(bloc) {
+      var objet = {};
+      bloc.querySelectorAll(":scope > .champ [data-champ], :scope > .deux-champs [data-champ]").forEach(function (input) {
+        objet[input.dataset.champ] = input.value.trim();
+      });
+      return objet;
+    }
+
+    function collecter() {
+      var fb = document.getElementById("c-facebook").value.trim();
+      var nouveau = {
+        apparence: {
+          logo: document.getElementById("a-logo").value.trim(),
+          nomSite: document.getElementById("a-nom").value.trim(),
+          sousTitre: document.getElementById("a-soustitre").value.trim(),
+          imageEntete: document.getElementById("a-entete").value.trim(),
+          couleurs: {
+            fond: document.getElementById("k-fond").value,
+            fondSecondaire: document.getElementById("k-fond2").value,
+            brun: document.getElementById("k-brun").value,
+            rouge: document.getElementById("k-rouge").value,
+            or: document.getElementById("k-or").value
+          },
+          boutons: {
+            don: document.getElementById("b-don").value,
+            or: document.getElementById("b-or").value,
+            brun: document.getElementById("b-brun").value
+          }
+        },
+        pied: {
+          titre: document.getElementById("p-titre").value.trim(),
+          description: document.getElementById("p-description").value.trim(),
+          adresse: document.getElementById("p-adresse").value.trim(),
+          copyright: document.getElementById("p-copyright").value.trim()
+        },
+        coordonnees: {
+          telephone: document.getElementById("c-telephone").value.trim(),
+          whatsapp: document.getElementById("c-whatsapp").value.trim(),
+          email: document.getElementById("c-email").value.trim(),
+          facebook: fb || "#"
+        },
+        youtube: {
+          lienChaine: document.getElementById("y-lien").value.trim(),
+          channelId: document.getElementById("y-channel").value.trim()
+        },
+        evenementVedette: {
+          etiquette: document.getElementById("v-etiquette").value.trim(),
+          dateISO: document.getElementById("v-date").value.trim(),
+          titre: document.getElementById("v-titre").value.trim(),
+          description: document.getElementById("v-description").value.trim(),
+          image: document.getElementById("v-image").value.trim(),
+          lieu: (contenu.evenementVedette || {}).lieu || "",
+          heure: (contenu.evenementVedette || {}).heure || ""
+        },
+        encartsAccueil: [],
+        messesTableau: [],
+        footerHoraires: [],
+        agenda: [],
+        actualites: [],
+        galerie: [],
+        videos: []
+      };
+
+      document.querySelectorAll('#liste-encarts > [data-type="encart"]').forEach(function (bloc) {
+        var encart = { titre: bloc.querySelector('[data-champ="titre"]').value.trim(), items: [] };
+        bloc.querySelectorAll('[data-type="encart-item"]').forEach(function (item) {
+          encart.items.push(lireElement(item));
+        });
+        nouveau.encartsAccueil.push(encart);
+      });
+
+      document.querySelectorAll('#liste-tableau > [data-type]').forEach(function (b) { nouveau.messesTableau.push(lireElement(b)); });
+      document.querySelectorAll('#liste-footer > [data-type]').forEach(function (b) { nouveau.footerHoraires.push(lireElement(b).ligne || ""); });
+      document.querySelectorAll('#liste-agenda > [data-type]').forEach(function (b) { nouveau.agenda.push(lireElement(b)); });
+      document.querySelectorAll('#liste-actualites > [data-type]').forEach(function (b) { nouveau.actualites.push(lireElement(b)); });
+      document.querySelectorAll('#liste-galerie > [data-type]').forEach(function (b) {
+        var o = lireElement(b);
+        o.categorie = b.querySelector('[data-champ="categorie"]').value;
+        if (!o.grand) o.grand = o.src;
+        nouveau.galerie.push(o);
+      });
+      document.querySelectorAll('#liste-videos > [data-type]').forEach(function (b) { nouveau.videos.push(lireElement(b)); });
+
+      return nouveau;
+    }
+
+    /* ---------- Actions ---------- */
+    document.addEventListener("click", function (e) {
+      if (e.target.classList.contains("supprimer")) {
+        e.target.closest(".element-liste").remove();
+      }
+      var btnAjout = e.target.closest("[data-ajouter]");
+      if (btnAjout) {
+        var type = btnAjout.dataset.ajouter;
+        var cible = document.getElementById("liste-" + type);
+        var element = gabarits[type](type === "footer" ? "" : undefined);
+        cible.appendChild(element);
+        element.querySelector("input, textarea").focus();
+      }
+    });
+
+    document.getElementById("v-image").addEventListener("change", function () {
+      var ap = document.getElementById("v-image-apercu");
+      ap.src = this.value;
+      ap.hidden = !this.value;
+    });
+
+    document.getElementById("k-reset").addEventListener("click", function () {
+      document.getElementById("k-fond").value = "#faf6ee";
+      document.getElementById("k-fond2").value = "#f3ecdd";
+      document.getElementById("k-brun").value = "#3e2712";
+      document.getElementById("k-rouge").value = "#9e1b1b";
+      document.getElementById("k-or").value = "#c9a227";
+      statut("Couleurs d'origine restaurées — cliquez sur 💾 Enregistrer pour appliquer.");
+    });
+
+    document.getElementById("b-reset").addEventListener("click", function () {
+      document.getElementById("b-don").value = "#9e1b1b";
+      document.getElementById("b-or").value = "#c9a227";
+      document.getElementById("b-brun").value = "#5d3a1a";
+      statut("Boutons d'origine restaurés — cliquez sur 💾 Enregistrer pour appliquer.");
+    });
+
+    [["a-logo", "a-logo-apercu"], ["a-entete", "a-entete-apercu"]].forEach(function (paire) {
+      document.getElementById(paire[0]).addEventListener("change", function () {
+        var ap = document.getElementById(paire[1]);
+        ap.src = this.value;
+        ap.hidden = !this.value;
+      });
+    });
+
+    document.getElementById("btn-telecharger").addEventListener("click", function () {
+      var donnees = JSON.stringify(collecter(), null, 2);
+      var blob = new Blob([donnees], { type: "application/json;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "contenu.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+      statut("✓ Fichier téléchargé — remplacez contenu.json sur votre hébergeur.", "ok");
+    });
+
+    document.getElementById("btn-enregistrer").addEventListener("click", function () {
+      var donnees = JSON.stringify(collecter(), null, 2);
+      fetch("enregistrer-contenu", {
+        method: "POST",
+        headers: { "Content-Type": "application/json;charset=utf-8" },
+        body: donnees
+      }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        contenu = JSON.parse(donnees);
+        statut("✓ Enregistré ! Rechargez les pages du site pour voir les changements.", "ok");
+      }).catch(function () {
+        statut("⚠ Sauvegarde directe indisponible ici — utilisez « Télécharger contenu.json ».", "erreur");
+      });
+    });
+
+    /* ---------- Chargement initial ---------- */
+    fetch("contenu.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (json) { contenu = json; remplir(); })
+      .catch(function () {
+        statut("⚠ Impossible de charger contenu.json. Ouvrez cette page depuis un serveur web (pas en double-clic).", "erreur");
+      });
+  })();
+  </script>
+</body>
+</html>

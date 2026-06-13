@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaîne YouTube — Paroisse Sainte Anne de Bingerville</title>
+  <meta name="description" content="Suivez les messes en direct, homélies, enseignements et reportages de la Paroisse Sainte Anne de Bingerville sur YouTube.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bandeau-haut">
+    <div class="conteneur">
+      <span>📍 Bingerville — Archidiocèse d'Abidjan, Côte d'Ivoire</span>
+      <span class="verset">« Venez à moi, vous tous qui peinez » — Mt 11, 28</span>
+      <span>☎ <a href="tel:+2250700000000">+225 07 00 00 00 00</a></span>
+    </div>
+  </div>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">
+        <span class="croix">✝</span>
+        <span class="nom">
+          <strong>Paroisse Sainte Anne</strong>
+          <span>BINGERVILLE · CÔTE D'IVOIRE</span>
+        </span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a href="la-paroisse.html">La Paroisse</a>
+            <div class="sous-menu">
+              <a href="la-paroisse.html#histoire">Notre histoire</a>
+              <a href="la-paroisse.html#sainte-anne">Sainte Anne, notre patronne</a>
+              <a href="la-paroisse.html#equipe">Équipe pastorale</a>
+            </div>
+          </li>
+          <li>
+            <a href="messes.html">Vie spirituelle</a>
+            <div class="sous-menu">
+              <a href="messes.html">Horaires des messes</a>
+              <a href="sacrements.html">Les sacrements</a>
+              <a href="mouvements.html">Mouvements &amp; associations</a>
+            </div>
+          </li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li>
+            <a href="medias.html">Médias</a>
+            <div class="sous-menu">
+              <a href="medias.html">Photos &amp; vidéos</a>
+              <a href="youtube.html">Chaîne YouTube</a>
+            </div>
+          </li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="don.html" class="btn-don-nav">♥ Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere-page">
+    <div class="conteneur">
+      <p class="fil-ariane"><a href="index.html">Accueil</a> › Médias › Chaîne YouTube</p>
+      <h1>Notre chaîne YouTube</h1>
+      <p>Messes en direct, homélies, enseignements et grands moments de la vie paroissiale.</p>
+    </div>
+  </section>
+
+  <!-- Direct -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">En direct</span>
+        <h2>La grand-messe du dimanche à 9 h 30</h2>
+        <p>Chaque dimanche, la grand-messe est retransmise en direct pour les malades, les personnes âgées et les paroissiens éloignés.</p>
+      </div>
+      <div class="bloc-youtube">
+        <div class="lecteur" id="lecteur-direct">
+          <!--
+            ✏ POUR ACTIVER LE DIRECT :
+            remplacez le bloc "placeholder-video" ci-dessous par l'iframe suivante,
+            en remplaçant VOTRE_CHANNEL_ID par l'identifiant de la chaîne YouTube de la paroisse :
+
+            <iframe
+              src="https://www.youtube.com/embed/live_stream?channel=VOTRE_CHANNEL_ID"
+              title="Messe en direct — Paroisse Sainte Anne de Bingerville"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          -->
+          <div class="placeholder-video">
+            <span class="badge-direct"><span class="point"></span> Direct dimanche 9 h 30</span>
+            <span class="bouton-lecture">▶</span>
+            <p><strong>Le lecteur du direct s'affichera ici.</strong><br>La commission communication y branchera la chaîne YouTube officielle de la paroisse.</p>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:26px;">
+        <a class="btn btn-rouge" href="https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville" target="_blank" rel="noopener">▶ Trouver la chaîne sur YouTube</a>
+        <a class="btn btn-brun" href="contact.html" style="margin-left:8px;">Signaler un problème de diffusion</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Playlists -->
+  <section class="section section-creme">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">À regarder</span>
+        <h2>Nos playlists</h2>
+        <p>Les vidéos sont organisées par thème pour retrouver facilement ce que vous cherchez.</p>
+      </div>
+      <div class="grille grille-3">
+        <article class="carte">
+          <img class="visuel" src="images/interieur-eglise.jpg" alt="Intérieur de l'église Sainte Anne">
+          <div class="corps">
+            <h3>🔴 Messes dominicales</h3>
+            <p>Les directs et rediffusions de la grand-messe de 9 h 30, avec l'animation de nos chorales.</p>
+            <a class="lien-plus" href="https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville" target="_blank" rel="noopener">Voir la playlist →</a>
+          </div>
+        </article>
+        <article class="carte">
+          <img class="visuel" src="https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bible ouverte sur un lutrin">
+          <div class="corps">
+            <h3>📖 Homélies &amp; enseignements</h3>
+            <p>Les homélies des prêtres, les catéchèses et les conférences de formation chrétienne.</p>
+            <a class="lien-plus" href="https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville" target="_blank" rel="noopener">Voir la playlist →</a>
+          </div>
+        </article>
+        <article class="carte">
+          <img class="visuel" src="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mains levées pendant la louange">
+          <div class="corps">
+            <h3>🎵 Chorales &amp; veillées</h3>
+            <p>Concerts des chorales, veillées de louange et grands moments de la fête patronale.</p>
+            <a class="lien-plus" href="https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville" target="_blank" rel="noopener">Voir la playlist →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S'abonner -->
+  <section class="section section-brune">
+    <div class="conteneur deux-colonnes">
+      <div>
+        <span style="color:var(--or-clair);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;">Restez connectés</span>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);margin:8px 0 16px;">Pourquoi s'abonner à la chaîne ?</h2>
+        <ul style="list-style:none;display:grid;gap:14px;">
+          <li>🔔 <strong>Être averti des directs</strong> — recevez une notification dès que la messe commence.</li>
+          <li>🙏 <strong>Prier à distance</strong> — malades et voyageurs restent unis à la communauté.</li>
+          <li>📖 <strong>Se former</strong> — retrouvez homélies et catéchèses à tout moment.</li>
+          <li>📣 <strong>Faire rayonner la paroisse</strong> — partagez les vidéos autour de vous.</li>
+        </ul>
+        <p style="margin-top:24px;">
+          <a class="btn btn-or" href="https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville" target="_blank" rel="noopener">▶ S'abonner sur YouTube</a>
+        </p>
+      </div>
+      <div class="bloc-youtube">
+        <div class="lecteur">
+          <div class="placeholder-video">
+            <span class="bouton-lecture">▶</span>
+            <p><strong>Dernière vidéo publiée</strong><br>Ce lecteur affichera automatiquement la dernière vidéo de la chaîne paroissiale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="appel-action">
+    <div class="conteneur">
+      <h2>Un talent en vidéo, son ou photo ?</h2>
+      <p>La commission communication recrute des bénévoles pour filmer et diffuser les célébrations.</p>
+      <a href="contact.html" class="btn btn-or">Rejoindre l'équipe médias</a>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="grille grille-4">
+        <div>
+          <h4>Paroisse Sainte Anne</h4>
+          <p>Communauté catholique de Bingerville, Archidiocèse d'Abidjan, Côte d'Ivoire. Une famille où chacun est accueilli, écouté et envoyé.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="youtube.html" aria-label="YouTube">▶</a>
+            <a href="https://wa.me/2250700000000" aria-label="WhatsApp">✆</a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="messes.html">Horaires des messes</a></li>
+            <li><a href="sacrements.html">Les sacrements</a></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><a href="medias.html">Photos &amp; vidéos</a></li>
+            <li><a href="don.html">Faire un don</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Messes dominicales</h4>
+          <ul>
+            <li>Samedi : 18 h 30 (anticipée)</li>
+            <li>Dimanche : 7 h 00</li>
+            <li>Dimanche : 9 h 30 (grand-messe)</li>
+            <li>Confessions : samedi 16 h – 17 h 30</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 Bingerville, Abidjan — Côte d'Ivoire</li>
+            <li>☎ +225 07 00 00 00 00</li>
+            <li>✉ paroissesainteanne.bgv@gmail.com</li>
+            <li><a href="contact.html">Plan d'accès →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bas">
+        <p>© <span class="annee-courante">2026</span> Paroisse Sainte Anne de Bingerville — Tous droits réservés. Photos d'illustration : <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements — Paroisse Sainte Anne de Bingerville</title>
+  <meta name="description" content="Agenda des événements de la Paroisse Sainte Anne de Bingerville : fête patronale, pèlerinages, veillées, kermesse, camps des jeunes et journées caritatives.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bandeau-haut">
+    <div class="conteneur">
+      <span>📍 Bingerville — Archidiocèse d'Abidjan, Côte d'Ivoire</span>
+      <span class="verset">« Venez à moi, vous tous qui peinez » — Mt 11, 28</span>
+      <span>☎ <a href="tel:+2250700000000">+225 07 00 00 00 00</a></span>
+    </div>
+  </div>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">
+        <span class="croix">✝</span>
+        <span class="nom">
+          <strong>Paroisse Sainte Anne</strong>
+          <span>BINGERVILLE · CÔTE D'IVOIRE</span>
+        </span>
+      </a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li>
+            <a href="la-paroisse.html">La Paroisse</a>
+            <div class="sous-menu">
+              <a href="la-paroisse.html#histoire">Notre histoire</a>
+              <a href="la-paroisse.html#sainte-anne">Sainte Anne, notre patronne</a>
+              <a href="la-paroisse.html#equipe">Équipe pastorale</a>
+            </div>
+          </li>
+          <li>
+            <a href="messes.html">Vie spirituelle</a>
+            <div class="sous-menu">
+              <a href="messes.html">Horaires des messes</a>
+              <a href="sacrements.html">Les sacrements</a>
+              <a href="mouvements.html">Mouvements &amp; associations</a>
+            </div>
+          </li>
+          <li><a href="evenements.html">Événements</a></li>
+          <li>
+            <a href="medias.html">Médias</a>
+            <div class="sous-menu">
+              <a href="medias.html">Photos &amp; vidéos</a>
+              <a href="youtube.html">Chaîne YouTube</a>
+            </div>
+          </li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="don.html" class="btn-don-nav">♥ Faire un don</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere-page">
+    <div class="conteneur">
+      <p class="fil-ariane"><a href="index.html">Accueil</a> › Événements</p>
+      <h1>Espace événementiel</h1>
+      <p>Les grands rendez-vous qui rythment la vie de notre paroisse.</p>
+    </div>
+  </section>
+
+  <!-- Événement phare -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Événement phare</span>
+        <h2>Fête patronale Sainte Anne 2026</h2>
+      </div>
+      <div class="evenement-vedette" data-cms-vedette="evenements">
+        <img src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Assemblée en prière, mains levées vers le ciel">
+        <div class="contenu">
+          <span class="etiquette-vedette" data-cms="vedette-badge">Dimanche 26 juillet 2026</span>
+          <h3 style="font-size:1.8rem;" data-cms="vedette-titre">Triduum, messe solennelle &amp; fête communautaire</h3>
+          <p style="color:var(--texte-doux);" data-cms="vedette-description">Du jeudi 23 au samedi 25 juillet : triduum de prière et neuvaine à sainte Anne. Dimanche 26 juillet : grand-messe solennelle à 9 h 30, procession, animation des chorales, repas partagé et kermesse paroissiale.</p>
+          <p><strong>Dans :</strong> <span data-compte-rebours="2026-07-26" style="color:var(--rouge);font-weight:700;"></span></p>
+          <div class="meta-evenement">
+            <span>📍 Église Sainte Anne, Bingerville</span>
+            <span>🕘 9 h 30</span>
+            <span>🎉 Toute la journée</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agenda -->
+  <section class="section section-creme">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Agenda</span>
+        <h2>Prochains rendez-vous</h2>
+      </div>
+
+      <div id="liste-agenda">
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>20</strong><span>juin 2026</span></div>
+        <div class="infos">
+          <h3>Journée caritative Caritas</h3>
+          <p>Collecte et distribution de vivres, vêtements et kits scolaires aux familles démunies de Bingerville. Dépôt des dons au secrétariat toute la semaine.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 8 h – 16 h</span><span>📍 Cour de la paroisse</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>27</strong><span>juin 2026</span></div>
+        <div class="infos">
+          <h3>Récollection des catéchistes</h3>
+          <p>Journée de ressourcement spirituel pour clôturer l'année pastorale : enseignement, adoration et messe d'action de grâce.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 8 h 30 – 15 h</span><span>📍 Salle paroissiale</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>03</strong><span>juil. 2026</span></div>
+        <div class="infos">
+          <h3>Veillée de louange du premier vendredi</h3>
+          <p>Messe du Sacré-Cœur à 18 h 30 suivie de la veillée de louange et d'adoration animée par le Renouveau Charismatique.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 18 h 30 – 22 h</span><span>📍 Église</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>18</strong><span>juil. 2026</span></div>
+        <div class="infos">
+          <h3>Grande kermesse pré-fête patronale</h3>
+          <p>Stands, restauration, jeux pour enfants, tombola et animations des mouvements au profit des œuvres et des chantiers de la paroisse.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 9 h – 18 h</span><span>📍 Cour de la paroisse</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>23-25</strong><span>juil. 2026</span></div>
+        <div class="infos">
+          <h3>Triduum de la Sainte Anne</h3>
+          <p>Trois soirées de prière, d'enseignement et de confession pour préparer la fête patronale. Chaque soir à 18 h 30.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 18 h 30</span><span>📍 Église</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>26</strong><span>juil. 2026</span></div>
+        <div class="infos">
+          <h3>Fête patronale Sainte Anne</h3>
+          <p>Messe solennelle, procession et fête communautaire. Toutes les familles de Bingerville sont invitées !</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 9 h 30</span><span>📍 Église &amp; cour paroissiale</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>10-16</strong><span>août 2026</span></div>
+        <div class="infos">
+          <h3>Camp biblique des jeunes</h3>
+          <p>Une semaine de formation, de jeux, de prière et de fraternité pour les adolescents et jeunes de la paroisse.</p>
+        </div>
+        <div class="meta-evenement"><span>📍 Lieu communiqué aux inscrits</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>15</strong><span>août 2026</span></div>
+        <div class="infos">
+          <h3>Assomption — pèlerinage marial</h3>
+          <p>Messe de l'Assomption puis pèlerinage et chapelet médité avec la Légion de Marie et les communautés de quartier.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 7 h 30</span><span>📍 Départ de l'église</span></div>
+      </div>
+
+      <div class="ligne-agenda">
+        <div class="date-bloc"><strong>13</strong><span>sept. 2026</span></div>
+        <div class="infos">
+          <h3>Rentrée paroissiale &amp; catéchèse</h3>
+          <p>Messe de rentrée, présentation des mouvements et lancement de l'année de catéchèse 2026-2027.</p>
+        </div>
+        <div class="meta-evenement"><span>🕘 9 h 30</span><span>📍 Église</span></div>
+      </div>
+      </div>
+
+      <p class="note-avertissement">ℹ L'agenda est mis à jour régulièrement par le secrétariat. Les dates peuvent évoluer : consultez les annonces dominicales et la page <a href="actualites.html">Actualités</a>.</p>
+    </div>
+  </section>
+
+  <!-- Temps forts en images -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete-section">
+        <span class="etiquette">Revivre nos temps forts</span>
+        <h2>Les activités de la paroisse en images</h2>
+      </div>
+      <div class="grille grille-3">
+        <article class="carte">
+          <img class="visuel" src="https://images.pexels.com/photos/415571/pexels-photo-415571.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Croix au coucher du soleil">
+          <div class="corps">
+            <h3>Chemin de croix &amp; Carême</h3>
+            <p>Chaque vendredi de Carême, la communauté médite la Passion du Christ, jusqu'à la grande célébration pascale.</p>
+          </div>
+        </article>
+        <article class="carte">
+          <img class="visuel" src="https://images.pexels.com/photos/8815070/pexels-photo-8815070.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fidèles dansant lors d'une fête">
+          <div class="corps">
+            <h3>Fêtes communautaires</h3>
+            <p>Kermesses, anniversaires des mouvements, accueil des nouveaux paroissiens : la joie de se retrouver en famille.</p>
+          </div>
+        </article>
+        <article class="carte">
+          <img class="visuel" src="https://images.pexels.com/photos/5206040/pexels-photo-5206040.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Homme méditant la Bible">
+          <div class="corps">
+            <h3>Retraites &amp; récollections</h3>
+            <p>Des temps de silence et de formation pour les catéchistes, les mouvements, les fiancés et les jeunes.</p>
+          </div>
+        </article>
+      </div>
+      <p style="text-align:center;margin-top:30px;">
+        <a href="medias.html" class="btn btn-rouge">📷 Voir toutes les photos &amp; vidéos</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="appel-action">
+    <div class="conteneur">
+      <h2>Vous organisez une activité paroissiale ?</h2>
+      <p>Transmettez les informations et photos de votre mouvement à la commission communication pour publication sur le site.</p>
+      <a href="contact.html" class="btn btn-or">Contacter la communication</a>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="grille grille-4">
+        <div>
+          <h4>Paroisse Sainte Anne</h4>
+          <p>Communauté catholique de Bingerville, Archidiocèse d'Abidjan, Côte d'Ivoire. Une famille où chacun est accueilli, écouté et envoyé.</p>
+          <div class="reseaux">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="youtube.html" aria-label="YouTube">▶</a>
+            <a href="https://wa.me/2250700000000" aria-label="WhatsApp">✆</a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="messes.html">Horaires des messes</a></li>
+            <li><a href="sacrements.html">Les sacrements</a></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><a href="medias.html">Photos &amp; vidéos</a></li>
+            <li><a href="don.html">Faire un don</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Messes dominicales</h4>
+          <ul>
+            <li>Samedi : 18 h 30 (anticipée)</li>
+            <li>Dimanche : 7 h 00</li>
+            <li>Dimanche : 9 h 30 (grand-messe)</li>
+            <li>Confessions : samedi 16 h – 17 h 30</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>📍 Bingerville, Abidjan — Côte d'Ivoire</li>
+            <li>☎ +225 07 00 00 00 00</li>
+            <li>✉ paroissesainteanne.bgv@gmail.com</li>
+            <li><a href="contact.html">Plan d'accès →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bas">
+        <p>© <span class="annee-courante">2026</span> Paroisse Sainte Anne de Bingerville — Tous droits réservés. Photos d'illustration : <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cms.js"></script>
+</body>
+</html>

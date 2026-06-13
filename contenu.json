@@ -1,0 +1,375 @@
+{
+  "apparence": {
+    "logo": "",
+    "nomSite": "Paroisse Sainte Anne",
+    "sousTitre": "BINGERVILLE · CÔTE D'IVOIRE",
+    "imageEntete": "images/interieur-eglise.jpg",
+    "couleurs": {
+      "fond": "#faf6ee",
+      "fondSecondaire": "#f3ecdd",
+      "brun": "#3e2712",
+      "rouge": "#9e1b1b",
+      "or": "#c9a227"
+    },
+    "boutons": {
+      "don": "#9e1b1b",
+      "or": "#c9a227",
+      "brun": "#5d3a1a"
+    }
+  },
+  "pied": {
+    "titre": "Paroisse Sainte Anne",
+    "description": "Communauté catholique de Bingerville, Archidiocèse d'Abidjan, Côte d'Ivoire. Une famille où chacun est accueilli, écouté et envoyé.",
+    "adresse": "Bingerville, Abidjan — Côte d'Ivoire",
+    "copyright": "Paroisse Sainte Anne de Bingerville — Tous droits réservés."
+  },
+  "coordonnees": {
+    "telephone": "+225 01 51 52 75 58",
+    "whatsapp": "+225 01 51 52 75 58",
+    "email": "sainteanne.bgv@gmail.com",
+    "facebook": "#"
+  },
+  "youtube": {
+    "lienChaine": "https://www.youtube.com/results?search_query=paroisse+sainte+anne+bingerville",
+    "channelId": ""
+  },
+  "evenementVedette": {
+    "etiquette": "Fête patronale",
+    "dateISO": "2026-07-26",
+    "titre": "Sainte Anne 2026 — Dimanche 26 juillet",
+    "description": "Grand-messe solennelle, précédée du triduum de prière du 23 au 25 juillet. Procession, animation des chorales, repas communautaire et kermesse paroissiale.",
+    "image": "https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "lieu": "Église Sainte Anne, Bingerville",
+    "heure": "9 h 30"
+  },
+  "encartsAccueil": [
+    {
+      "titre": "⛪ Messes dominicales",
+      "items": [
+        {
+          "libelle": "Samedi (messe anticipée)",
+          "horaire": "18 h 30"
+        },
+        {
+          "libelle": "Dimanche — messe matinale",
+          "horaire": "7 h 00"
+        },
+        {
+          "libelle": "Dimanche — grand-messe",
+          "horaire": "9 h 30"
+        }
+      ]
+    },
+    {
+      "titre": "🕯 Messes en semaine",
+      "items": [
+        {
+          "libelle": "Mardi à vendredi",
+          "horaire": "6 h 15"
+        },
+        {
+          "libelle": "Mercredi (soir)",
+          "horaire": "18 h 30"
+        },
+        {
+          "libelle": "Premier vendredi du mois",
+          "horaire": "18 h 30"
+        }
+      ]
+    },
+    {
+      "titre": "🙏 Confessions & adoration",
+      "items": [
+        {
+          "libelle": "Confessions (samedi)",
+          "horaire": "16 h – 17 h 30"
+        },
+        {
+          "libelle": "Adoration eucharistique (jeudi)",
+          "horaire": "18 h – 19 h"
+        },
+        {
+          "libelle": "Chapelet (tous les jours)",
+          "horaire": "17 h 30"
+        }
+      ]
+    }
+  ],
+  "messesTableau": [
+    {
+      "jour": "Samedi",
+      "heure": "18 h 30",
+      "celebration": "Messe dominicale anticipée"
+    },
+    {
+      "jour": "Dimanche",
+      "heure": "7 h 00",
+      "celebration": "Messe matinale"
+    },
+    {
+      "jour": "Dimanche",
+      "heure": "9 h 30",
+      "celebration": "Grand-messe (retransmise sur YouTube)"
+    },
+    {
+      "jour": "Mardi à vendredi",
+      "heure": "6 h 15",
+      "celebration": "Messe en semaine"
+    },
+    {
+      "jour": "Mercredi",
+      "heure": "18 h 30",
+      "celebration": "Messe du soir"
+    },
+    {
+      "jour": "1er vendredi du mois",
+      "heure": "18 h 30",
+      "celebration": "Messe du Sacré-Cœur suivie de la veillée de louange"
+    }
+  ],
+  "footerHoraires": [
+    "Samedi : 18 h 30 (anticipée)",
+    "Dimanche : 7 h 00",
+    "Dimanche : 9 h 30 (grand-messe)",
+    "Confessions : samedi 16 h – 17 h 30"
+  ],
+  "agenda": [
+    {
+      "jour": "20",
+      "mois": "juin 2026",
+      "titre": "Journée caritative Caritas",
+      "description": "Collecte et distribution de vivres, vêtements et kits scolaires aux familles démunies de Bingerville. Dépôt des dons au secrétariat toute la semaine.",
+      "heure": "8 h – 16 h",
+      "lieu": "Cour de la paroisse",
+      "image": "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "jour": "27",
+      "mois": "juin 2026",
+      "titre": "Récollection des catéchistes",
+      "description": "Journée de ressourcement spirituel pour clôturer l'année pastorale : enseignement, adoration et messe d'action de grâce.",
+      "heure": "8 h 30 – 15 h",
+      "lieu": "Salle paroissiale",
+      "image": "https://images.pexels.com/photos/5206040/pexels-photo-5206040.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "jour": "03",
+      "mois": "juil. 2026",
+      "titre": "Veillée de louange du premier vendredi",
+      "description": "Messe du Sacré-Cœur à 18 h 30 suivie de la veillée de louange et d'adoration animée par le Renouveau Charismatique.",
+      "heure": "18 h 30 – 22 h",
+      "lieu": "Église",
+      "image": "https://images.pexels.com/photos/2351722/pexels-photo-2351722.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "jour": "18",
+      "mois": "juil. 2026",
+      "titre": "Grande kermesse pré-fête patronale",
+      "description": "Stands, restauration, jeux pour enfants, tombola et animations des mouvements au profit des œuvres et des chantiers de la paroisse.",
+      "heure": "9 h – 18 h",
+      "lieu": "Cour de la paroisse",
+      "image": ""
+    },
+    {
+      "jour": "23-25",
+      "mois": "juil. 2026",
+      "titre": "Triduum de la Sainte Anne",
+      "description": "Trois soirées de prière, d'enseignement et de confession pour préparer la fête patronale. Chaque soir à 18 h 30.",
+      "heure": "18 h 30",
+      "lieu": "Église",
+      "image": ""
+    },
+    {
+      "jour": "26",
+      "mois": "juil. 2026",
+      "titre": "Fête patronale Sainte Anne",
+      "description": "Messe solennelle, procession et fête communautaire. Toutes les familles de Bingerville sont invitées !",
+      "heure": "9 h 30",
+      "lieu": "Église & cour paroissiale",
+      "image": ""
+    },
+    {
+      "jour": "10-16",
+      "mois": "août 2026",
+      "titre": "Camp biblique des jeunes",
+      "description": "Une semaine de formation, de jeux, de prière et de fraternité pour les adolescents et jeunes de la paroisse.",
+      "heure": "",
+      "lieu": "Lieu communiqué aux inscrits",
+      "image": ""
+    },
+    {
+      "jour": "15",
+      "mois": "août 2026",
+      "titre": "Assomption — pèlerinage marial",
+      "description": "Messe de l'Assomption puis pèlerinage et chapelet médité avec la Légion de Marie et les communautés de quartier.",
+      "heure": "7 h 30",
+      "lieu": "Départ de l'église",
+      "image": ""
+    },
+    {
+      "jour": "13",
+      "mois": "sept. 2026",
+      "titre": "Rentrée paroissiale & catéchèse",
+      "description": "Messe de rentrée, présentation des mouvements et lancement de l'année de catéchèse 2026-2027.",
+      "heure": "9 h 30",
+      "lieu": "Église",
+      "image": ""
+    }
+  ],
+  "actualites": [
+    {
+      "date": "28 juin 2026",
+      "titre": "Noces d'argent du Père curé",
+      "texte": "Grande fête à l'occasion des 25 ans de sacerdoce du père curé",
+      "image": "https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "date": "1er juin 2026",
+      "titre": "Travaux d'embellissement de l'église",
+      "texte": "Grâce à vos dons et à la kermesse, les travaux de peinture, de sonorisation et d'éclairage du chœur se poursuivent. Merci à tous les donateurs et aux bénévoles mobilisés chaque samedi matin.",
+      "image": "https://images.pexels.com/photos/7218525/pexels-photo-7218525.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "date": "25 mai 2026",
+      "titre": "Préparation au mariage : nouvelle session",
+      "texte": "Une nouvelle session de préparation au sacrement de mariage débutera en septembre. Les fiancés sont invités à déposer leur dossier au secrétariat au moins six mois avant la date souhaitée.",
+      "image": "https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "date": "18 mai 2026",
+      "titre": "Caritas : appel aux dons",
+      "texte": "En vue de la journée caritative du 20 juin, la Caritas paroissiale collecte vivres, vêtements en bon état et fournitures scolaires. Dépôt au secrétariat du mardi au samedi.",
+      "image": "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "date": "11 mai 2026",
+      "titre": "Fête patronale : appel aux commissions",
+      "texte": "La préparation de la fête de Sainte Anne (26 juillet) est lancée. Les mouvements sont invités à désigner leurs représentants dans les commissions liturgie, restauration, logistique et communication.",
+      "image": "https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=900"
+    },
+    {
+      "date": "4 mai 2026",
+      "titre": "Le site internet de la paroisse est en ligne !",
+      "texte": "Horaires, sacrements, événements, photos, vidéos et chaîne YouTube : retrouvez toute la vie de la paroisse sur ce site. Partagez l'adresse autour de vous !",
+      "image": "images/interieur-eglise.jpg"
+    }
+  ],
+  "galerie": [
+    {
+      "legende": "Notre église — la nef et le chœur",
+      "src": "images/interieur-eglise.jpg",
+      "grand": "images/interieur-eglise.jpg",
+      "categorie": "celebrations"
+    },
+    {
+      "legende": "Assemblée en prière",
+      "src": "https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "celebrations"
+    },
+    {
+      "legende": "Liturgie de la Parole",
+      "src": "https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "celebrations"
+    },
+    {
+      "legende": "Vitrail — la Crucifixion",
+      "src": "https://images.pexels.com/photos/208216/pexels-photo-208216.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/208216/pexels-photo-208216.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "celebrations"
+    },
+    {
+      "legende": "Mariage à la paroisse",
+      "src": "https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/1043902/pexels-photo-1043902.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "celebrations"
+    },
+    {
+      "legende": "Veillée de louange",
+      "src": "https://images.pexels.com/photos/2351722/pexels-photo-2351722.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/2351722/pexels-photo-2351722.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "communaute"
+    },
+    {
+      "legende": "Soirée de prière",
+      "src": "https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "communaute"
+    },
+    {
+      "legende": "Fête communautaire",
+      "src": "https://images.pexels.com/photos/8815070/pexels-photo-8815070.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/8815070/pexels-photo-8815070.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "communaute"
+    },
+    {
+      "legende": "Conférence & formation",
+      "src": "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "communaute"
+    },
+    {
+      "legende": "Catéchisme des enfants",
+      "src": "https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "jeunesse"
+    },
+    {
+      "legende": "La jeunesse paroissiale",
+      "src": "https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "jeunesse"
+    },
+    {
+      "legende": "Étude biblique",
+      "src": "https://images.pexels.com/photos/1296720/pexels-photo-1296720.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/1296720/pexels-photo-1296720.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "jeunesse"
+    },
+    {
+      "legende": "Caritas — collecte de dons",
+      "src": "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "solidarite"
+    },
+    {
+      "legende": "Mains ouvertes pour servir",
+      "src": "https://images.pexels.com/photos/257037/pexels-photo-257037.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/257037/pexels-photo-257037.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "solidarite"
+    },
+    {
+      "legende": "Prière pour les malades",
+      "src": "https://images.pexels.com/photos/267559/pexels-photo-267559.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "grand": "https://images.pexels.com/photos/267559/pexels-photo-267559.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "categorie": "solidarite"
+    }
+  ],
+  "videos": [
+    {
+      "titre": "Un peuple en prière",
+      "description": "L'assemblée des fidèles unie dans la prière — vidéo d'illustration Pexels.",
+      "src": "https://videos.pexels.com/video-files/28887495/12505005_1920_1080_50fps.mp4",
+      "poster": "images/poster-28887495.jpg"
+    },
+    {
+      "titre": "Veillée de louange",
+      "description": "La joie de chanter et de louer ensemble — vidéo d'illustration Pexels.",
+      "src": "https://videos.pexels.com/video-files/37639456/15954199_1920_1080_24fps.mp4",
+      "poster": "images/poster-37639456.jpg"
+    },
+    {
+      "titre": "Au pied de la Croix",
+      "description": "Le calvaire, signe de notre espérance — vidéo d'illustration Pexels.",
+      "src": "https://videos.pexels.com/video-files/32026248/13651059_1920_1080_25fps.mp4",
+      "poster": "images/poster-32026248.jpg"
+    },
+    {
+      "titre": "Lumière dans la nuit",
+      "description": "Une flamme qui veille, comme la prière qui ne s'éteint pas — vidéo d'illustration Pexels.",
+      "src": "https://videos.pexels.com/video-files/26885211/12025943_1920_1080_25fps.mp4",
+      "poster": "images/poster-26885211.jpg"
+    }
+  ]
+}
