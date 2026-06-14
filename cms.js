@@ -340,8 +340,13 @@
     if (!t) return;
     Object.keys(t).forEach(function (cle) {
       var sel = '[data-txt="' + cle + '"]';
+      var val = t[cle] == null ? "" : String(t[cle]);
       document.querySelectorAll(sel).forEach(function (el) {
-        el.textContent = t[cle];
+        if (val.indexOf("\n") >= 0) {
+          el.innerHTML = val.split("\n").map(echapper).join("<br>");
+        } else {
+          el.textContent = val;
+        }
       });
     });
   }
@@ -364,7 +369,7 @@
   }
 
   function charger() {
-    fetch("contenu.json", { cache: "no-store" })
+    fetch("contenu.json?_=" + Date.now(), { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(appliquer)
       .catch(function (err) {
