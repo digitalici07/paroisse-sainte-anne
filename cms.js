@@ -335,8 +335,20 @@
   }
 
   /* ----- Chargement ----- */
+  /* ----- Textes libres balisés par data-txt (bandeau, accueil, bannières…) ----- */
+  function rendreTextes(t) {
+    if (!t) return;
+    Object.keys(t).forEach(function (cle) {
+      var sel = '[data-txt="' + cle + '"]';
+      document.querySelectorAll(sel).forEach(function (el) {
+        el.textContent = t[cle];
+      });
+    });
+  }
+
   function appliquer(contenu) {
     rendreApparence(contenu.apparence);
+    rendreTextes(contenu.textes);
     rendrePied(contenu.pied);
     rendreCoordonnees(contenu.coordonnees);
     rendreYoutube(contenu.youtube);

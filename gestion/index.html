@@ -191,6 +191,14 @@
         </div>
       </details>
 
+      <details class="panneau">
+        <summary>✏️ Textes du site (bandeau, accueil, titres des pages)</summary>
+        <div class="interieur">
+          <p class="aide" style="margin-bottom:12px;">Modifiez ici les textes fixes du site : la ligne du bandeau tout en haut (lieu &amp; verset), les textes de la page d'accueil, et le titre / sous-titre de chaque page.</p>
+          <div id="liste-textes"></div>
+        </div>
+      </details>
+
       <details class="panneau" open>
         <summary>📞 Coordonnées &amp; réseaux</summary>
         <div class="interieur">
@@ -464,8 +472,70 @@
       }
     };
 
+    /* ---------- Textes libres (bandeau, accueil, bannières) ---------- */
+    var TEXTES_GROUPES = {
+      "bandeau": "Bandeau supérieur (sur toutes les pages)",
+      "accueil": "Page d'accueil",
+      "banniere": "Titre &amp; sous-titre de chaque page"
+    };
+    var TEXTES_LABELS = {
+      "bandeau.lieu": "Lieu (à gauche, en haut)",
+      "bandeau.verset": "Verset (au centre, en haut)",
+      "accueil.heroSurtitre": "Petit texte au-dessus du grand titre",
+      "accueil.heroTitre": "Grand titre d'accueil",
+      "accueil.heroAccroche": "Phrase d'accroche",
+      "accueil.motEtiquette": "Étiquette « Mot d'accueil »",
+      "accueil.motTitre": "Titre du mot d'accueil",
+      "accueil.motTexte1": "Mot d'accueil — 1er paragraphe",
+      "accueil.motCitation": "Citation",
+      "accueil.motCitationAuteur": "Auteur de la citation",
+      "accueil.motTexte2": "Mot d'accueil — 2e paragraphe"
+    };
+    var TEXTES_PAGES = {
+      "laparoisse": "La Paroisse", "messes": "Horaires des messes",
+      "sacrements": "Les sacrements", "mouvements": "Mouvements",
+      "evenements": "Événements", "medias": "Médias", "youtube": "Chaîne YouTube",
+      "actualites": "Actualités", "don": "Faire un don", "contact": "Contact"
+    };
+    function labelTexte(cle) {
+      if (TEXTES_LABELS[cle]) return TEXTES_LABELS[cle];
+      var m = cle.match(/^banniere\.(.+)\.(titre|soustitre)$/);
+      if (m) {
+        var nom = TEXTES_PAGES[m[1]] || m[1];
+        return "Page « " + nom + " » — " + (m[2] === "titre" ? "titre" : "sous-titre");
+      }
+      return cle;
+    }
+    function remplirTextes(textes) {
+      var cont = document.getElementById("liste-textes");
+      cont.innerHTML = "";
+      if (!textes) return;
+      var groupe = null;
+      Object.keys(textes).forEach(function (cle) {
+        var prefixe = cle.split(".")[0];
+        if (prefixe !== groupe) {
+          groupe = prefixe;
+          var h = document.createElement("h3");
+          h.style.margin = "18px 0 8px";
+          h.innerHTML = TEXTES_GROUPES[prefixe] || prefixe;
+          cont.appendChild(h);
+        }
+        var val = textes[cle];
+        var lng = String(val).length > 70;
+        var champ = document.createElement("div");
+        champ.className = "champ";
+        champ.innerHTML = "<label></label>" + (lng ? '<textarea data-cle=""></textarea>' : '<input data-cle="">');
+        champ.querySelector("label").textContent = labelTexte(cle);
+        var saisie = champ.querySelector("[data-cle]");
+        saisie.setAttribute("data-cle", cle);
+        saisie.value = val;
+        cont.appendChild(champ);
+      });
+    }
+
     /* ---------- Remplissage des formulaires ---------- */
     function remplir() {
+      remplirTextes(contenu.textes);
       var a = contenu.apparence || {};
       document.getElementById("a-nom").value = a.nomSite || "";
       document.getElementById("a-soustitre").value = a.sousTitre || "";
@@ -541,7 +611,13 @@
 
     function collecter() {
       var fb = document.getElementById("c-facebook").value.trim();
+      var textes = {};
+      document.querySelectorAll('#liste-textes [data-cle]').forEach(function (el) {
+        textes[el.getAttribute("data-cle")] = el.value;
+      });
+      if (Object.keys(textes).length === 0) { textes = contenu.textes || {}; }
       var nouveau = {
+        textes: textes,
         apparence: {
           logo: document.getElementById("a-logo").value.trim(),
           nomSite: document.getElementById("a-nom").value.trim(),
